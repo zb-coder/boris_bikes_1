@@ -1,6 +1,14 @@
 require 'docking_station.rb'
 
 describe DockingStation do
-  it { expect(DockingStation.new).to respond_to(:release_bike) }
-  it { expect(DockingStation.new.release_bike.working?).to eq true }
+  docking_station = DockingStation.new
+  bike1 = Bike.new
+
+  it { expect(docking_station).to respond_to(:release_bike) }
+  it { expect(bike1.working?).to eq true }
+  it { expect(docking_station).to respond_to(:dock) }
+
+  bike1.dock(docking_station)
+  it { expects(docking_station).to have_attributes(:bikes => [bike1]) }
+
 end
