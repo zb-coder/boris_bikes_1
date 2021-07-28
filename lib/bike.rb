@@ -1,5 +1,13 @@
 class Bike
+  def initialize(number, quality)
+    @number = number
+    @quality = quality
+  end
   def working?
-    true
+    if @quality == "working"
+      return true
+    else
+      return false
+    end
   end
 end
