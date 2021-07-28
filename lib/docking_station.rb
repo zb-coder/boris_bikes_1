@@ -5,7 +5,8 @@ class DockingStation
   end
   
   def release_bike
-    Bike.new
+    raise "No bikes available" if has_bikes? == false
+    bike = Bike.new(A, "working")
   end
   
   def dock(number)
