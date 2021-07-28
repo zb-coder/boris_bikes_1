@@ -8,7 +8,6 @@ describe DockingStation do
   it { expect(bike1.working?).to eq true }
   it { expect(docking_station).to respond_to(:dock) }
 
-  bike1.dock(docking_station)
   it { expects(docking_station).to have_attributes(:bikes => [bike1]) }
 
 end
