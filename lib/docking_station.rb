@@ -10,6 +10,7 @@ class DockingStation
   end
   
   def dock(number)
+    raise "Docking station is full" if @bikes.count == 1
     @bikes << number
   end
   
